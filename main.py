@@ -4,11 +4,9 @@ import hashlib
 import pickle
 import os
 import base64
-from PIL import Image
 import matplotlib.pyplot as plt
 import PyPDF2
 
-# ----------- SETTINGS: YOU CAN CHANGE THESE COLORS ----------- #
 PRIMARY_COLOR = "#245bff"
 BG_GRAD = "linear-gradient(120deg, #eaf6fb 0%, #b0e4fd 100%)"
 CARD_BG = "#fff"
@@ -18,7 +16,7 @@ SUCCESS_COLOR = "#2fc47e"
 BORDER_COLOR = "#e3ecf8"
 ACCENT_COLOR = "#ffd700"
 
-# ----------- UTILITY FUNCTIONS ----------- #
+# ----------- UTILITY ----------- #
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
@@ -169,11 +167,10 @@ class InfowayDashboard:
             </style>
             """, unsafe_allow_html=True)
 
-        # Use st.empty() to center vertically
+
         for _ in range(6):
             st.write("")
 
-        # Center logo and login fields with Streamlit only
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             logo_path = "images/inlogo.png"
